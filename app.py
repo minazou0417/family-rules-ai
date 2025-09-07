@@ -2,7 +2,7 @@ import os, streamlit as st
 from openai import OpenAI
 
 st.set_page_config(page_title="Family Rules Bot", page_icon="👪")
-st.title("家族のルールの確認")
+st.title("家族のルールの確認アプリ")
 
 # ← ここで変数名を my_api_key に
 my_api_key = st.secrets.get("OPENAI_API_KEY", os.getenv("OPENAI_API_KEY"))

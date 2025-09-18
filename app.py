@@ -146,6 +146,3 @@ if msg:
             with st.chat_message("assistant"):
                 st.write(res.choices[0].message.content)
                 st.caption(f"(match: {rule_text[:20]}… , sim: {best_sim:.2f})")
-
-
-st.caption("Powered by OpenAI (RAG: FAISS + text-embedding-3-small)")

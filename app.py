@@ -44,7 +44,6 @@ if os.path.exists(index_path) and os.path.exists(meta_path):
         if meta.get("model") == embed_model:
             index = faiss.read_index(index_path)
             rules = list(meta.get("rules", []))   # 「ルール：」抜き本文の配列
-            st.caption("FAISS: loaded existing index")
     except Exception:
         index = None
 
@@ -59,7 +58,6 @@ if index is None:
         index.add(X)
         faiss.write_index(index, index_path)
         json.dump({"model": embed_model, "rules": rules}, open(meta_path, "w", encoding="utf-8"), ensure_ascii=False)
-        st.caption("FAISS: built & saved")
 
 # === ここから 画面切り替え ===
 st.divider()
@@ -242,7 +240,6 @@ else:
             )
             with st.chat_message("assistant"):
                 st.write(gen.choices[0].message.content)
-            st.caption("(general chat)")
         else:
             # RAG 可否判定 → 検索 → 応答
             use_fallback = False

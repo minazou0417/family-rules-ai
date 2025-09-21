@@ -1,5 +1,5 @@
 streamlit==1.49.1
 openai>=1.40.0
 numpy==1.26.4
-faiss-cpu==1.7.4
+faiss-cpu==1.8.0.post1
 pyarrow==11.0.0
